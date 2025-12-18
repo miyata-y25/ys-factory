@@ -31,6 +31,10 @@ body {
     background-position: center;
     background-size: cover;
     height: 100vh;
+    @include max-screen($screen-sm) {
+        height: 90vh;
+        min-height: (75000vw/768);
+    }
     &__ttl {
         font-size: clamp((36em/12), (8400vw/1920), (84em/16));
         color: #FFF;
@@ -42,8 +46,8 @@ body {
         max-width: 827px;
         transform: translate(-50%,-50%);
         z-index: 10;
-        @include max-screen($screen-md) {
-            left: 1.25em;
+        @include max-screen($screen-sm) {
+            width: 80%;
         }
     }
     &__txt {
@@ -59,6 +63,9 @@ body {
             font-size: (20em/92);
             margin-top: 0.5em;
         }
+        @include max-screen($screen-sm) {
+            font-size: (8000vw/768);
+        }
     }
 }
 
@@ -67,7 +74,12 @@ body {
     background-repeat: no-repeat , no-repeat , no-repeat;
     background-position: top left , bottom right , bottom (13800vw/1920) center;
     background-size: percentage(1362/1920) , percentage(1362/1920) , 103% auto;
-    padding: 8em 0 22em;
+    padding: 8em 20px 20%;
+    @include max-screen($screen-sm) {
+        background-position: top left , bottom right , bottom (8000vw/768) center;
+        background-size: 100% auto , 100% auto , 102% auto;
+        padding: 15% 20px 25%;
+    }
     &__inner {
         max-width: 942px;
         margin: 0 auto;
@@ -76,21 +88,36 @@ body {
 .news-area {
     display: flex;
     padding: 0 20px;
+    @include max-screen($screen-sm) {
+        padding: 0;
+    }
     &__ttl {
         &__ttl {
             font-size: (63em/16);
             font-family: $Bebas-font;
             font-weight: normal;
             line-height: 1.1;
+            @include max-screen($screen-sm) {
+                font-size: (8000vw/768);
+            }
         }
     }
     &__ul {
         flex: 1;
         margin-left: 8%;
+        @include max-screen($screen-sm) {
+            margin-left: 5%;
+        }
         li {
-            padding: 1.5em 1em;
+            padding: 1.5em 2em 1.5em 1em;
             border-bottom: 1px solid #CCC;
             position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            @include max-screen($screen-sm) {
+                padding: 1.5em 1.5em 1.5em 0;
+            }
             &:after {
                 content: "";
                 position: absolute;
@@ -103,11 +130,35 @@ body {
                 background-position: center;
                 transform: translate(0,-50%);
             }
+            .time {
+            }
+            .cate {
+                margin: 0 1.5em;
+                font-size: (12em/16);
+                padding: 0.25em 0;
+                width: (84em/12);
+                text-align: center;
+                border-radius: 50em;
+                border: 1px solid #000;
+            }
+            a {
+                @include min-screen($screen-sm + 1) {
+                    flex: 1;
+                }
+                @include max-screen($screen-sm) {
+                    width: 100%;
+                    display: block;
+                    margin-top: 0.5em;
+                }
+            }
         }
     }
 }
 .news-bnr {
     margin-top: 4em;
+    @include max-screen($screen-sm) {
+        margin-top: 3em;
+    }
 }
 .news-btn {
     display: block;
@@ -125,6 +176,10 @@ body {
     //flex-wrap: wrap;
     position: relative;
     margin-top: (-16300vw/1920);
+    @include max-screen($screen-sm) {
+        display: block;
+        margin-top: 0;
+    }
     .sec-area  {
         padding: 0;
         a {
@@ -132,6 +187,9 @@ body {
             display: block;
             width: 100%;
             color: #FFF;
+            @include max-screen($screen-sm) {
+                padding: 5em 20px;
+            }
         }
     }
 }
@@ -164,6 +222,9 @@ body {
     &.--service {
         background-image: url(../img/top/service_bg.png);
         top: (16300vw/1920);
+        @include max-screen($screen-sm) {
+            top: auto;
+        }
     }
     &__ttl {
         line-height: 1.2;
@@ -208,10 +269,12 @@ body {
     text-align: center;
     padding: 12% 20px 8em;
     color: #FFF;
+    @include max-screen($screen-sm) {
+        padding: 5em 20px;
+    }
     &__inner {
         max-width: 1220px;
         margin: 0 auto;
-        
     }
 }
 .contact-area {
@@ -222,11 +285,17 @@ body {
         margin-bottom: 0.5em;
         padding-bottom: 0.5em;
         border-bottom: 1px solid #FFF;
+        @include max-screen($screen-sm) {
+            font-size: (3600vw/768);
+        }
     }
     &__tel {
         font-size: (77em/16);
         font-family: $Bebas-font;
         line-height: 1.2;
+        @include max-screen($screen-sm) {
+            font-size: (10000vw/768);
+        }
     }
     &__txt {
         font-size: (20em/16);

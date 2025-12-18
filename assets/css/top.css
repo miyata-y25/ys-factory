@@ -32,6 +32,12 @@
   background-size: cover;
   height: 100vh;
 }
+@media screen and (max-width: 768px) {
+  .top-main {
+    height: 90vh;
+    min-height: 97.65625vw;
+  }
+}
 .top-main__ttl {
   font-size: clamp(3em, 4.375vw, 5.25em);
   color: #FFF;
@@ -45,9 +51,9 @@
           transform: translate(-50%, -50%);
   z-index: 10;
 }
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 768px) {
   .top-main__ttl {
-    left: 1.25em;
+    width: 80%;
   }
 }
 .top-main__txt {
@@ -64,13 +70,25 @@
   font-size: 0.2173913043em;
   margin-top: 0.5em;
 }
+@media screen and (max-width: 768px) {
+  .top-main__txt {
+    font-size: 10.4166666667vw;
+  }
+}
 
 .sec-news {
   background-image: url(../img/top/news_bg.svg), url(../img/top/news_bg2.svg), url(../img/top/news_bg3.svg);
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: top left, bottom right, bottom 7.1875vw center;
   background-size: 70.9375%, 70.9375%, 103% auto;
-  padding: 8em 0 22em;
+  padding: 8em 20px 20%;
+}
+@media screen and (max-width: 768px) {
+  .sec-news {
+    background-position: top left, bottom right, bottom 10.4166666667vw center;
+    background-size: 100% auto, 100% auto, 102% auto;
+    padding: 15% 20px 25%;
+  }
 }
 .sec-news__inner {
   max-width: 942px;
@@ -84,11 +102,21 @@
   display: flex;
   padding: 0 20px;
 }
+@media screen and (max-width: 768px) {
+  .news-area {
+    padding: 0;
+  }
+}
 .news-area__ttl__ttl {
   font-size: 3.9375em;
   font-family: "Bebas Neue", sans-serif;
   font-weight: normal;
   line-height: 1.1;
+}
+@media screen and (max-width: 768px) {
+  .news-area__ttl__ttl {
+    font-size: 10.4166666667vw;
+  }
 }
 .news-area__ul {
   -webkit-box-flex: 1;
@@ -97,10 +125,31 @@
           flex: 1;
   margin-left: 8%;
 }
+@media screen and (max-width: 768px) {
+  .news-area__ul {
+    margin-left: 5%;
+  }
+}
 .news-area__ul li {
-  padding: 1.5em 1em;
+  padding: 1.5em 2em 1.5em 1em;
   border-bottom: 1px solid #CCC;
   position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+@media screen and (max-width: 768px) {
+  .news-area__ul li {
+    padding: 1.5em 1.5em 1.5em 0;
+  }
 }
 .news-area__ul li:after {
   content: "";
@@ -115,9 +164,38 @@
   -webkit-transform: translate(0, -50%);
           transform: translate(0, -50%);
 }
+.news-area__ul li .cate {
+  margin: 0 1.5em;
+  font-size: 0.75em;
+  padding: 0.25em 0;
+  width: 7em;
+  text-align: center;
+  border-radius: 50em;
+  border: 1px solid #000;
+}
+@media screen and (min-width: 769px) {
+  .news-area__ul li a {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+}
+@media screen and (max-width: 768px) {
+  .news-area__ul li a {
+    width: 100%;
+    display: block;
+    margin-top: 0.5em;
+  }
+}
 
 .news-bnr {
   margin-top: 4em;
+}
+@media screen and (max-width: 768px) {
+  .news-bnr {
+    margin-top: 3em;
+  }
 }
 
 .news-btn {
@@ -139,6 +217,12 @@
   position: relative;
   margin-top: -8.4895833333vw;
 }
+@media screen and (max-width: 768px) {
+  .sec-cont {
+    display: block;
+    margin-top: 0;
+  }
+}
 .sec-cont .sec-area {
   padding: 0;
 }
@@ -147,6 +231,11 @@
   display: block;
   width: 100%;
   color: #FFF;
+}
+@media screen and (max-width: 768px) {
+  .sec-cont .sec-area a {
+    padding: 5em 20px;
+  }
 }
 
 .sec-area {
@@ -193,6 +282,11 @@
   background-image: url(../img/top/service_bg.png);
   top: 8.4895833333vw;
 }
+@media screen and (max-width: 768px) {
+  .sec-area.--service {
+    top: auto;
+  }
+}
 .sec-area__ttl {
   line-height: 1.2;
   margin-bottom: 2em;
@@ -235,6 +329,11 @@
   padding: 12% 20px 8em;
   color: #FFF;
 }
+@media screen and (max-width: 768px) {
+  .sec-contact {
+    padding: 5em 20px;
+  }
+}
 .sec-contact__inner {
   max-width: 1220px;
   margin: 0 auto;
@@ -248,10 +347,20 @@
   padding-bottom: 0.5em;
   border-bottom: 1px solid #FFF;
 }
+@media screen and (max-width: 768px) {
+  .contact-area__read {
+    font-size: 4.6875vw;
+  }
+}
 .contact-area__tel {
   font-size: 4.8125em;
   font-family: "Bebas Neue", sans-serif;
   line-height: 1.2;
+}
+@media screen and (max-width: 768px) {
+  .contact-area__tel {
+    font-size: 13.0208333333vw;
+  }
 }
 .contact-area__txt {
   font-size: 1.25em;

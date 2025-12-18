@@ -1,0 +1,250 @@
+@charset "utf-8";
+
+@import "variable";
+@import "basic/mixin";
+@import "basic/selector";
+
+
+/*==================================================================================================
+    サイト基礎
+==================================================================================================*/
+body {
+}
+
+@keyframes zoomUp {
+    0% {
+        background-size: auto 100%;
+        background-position: right center;
+    }
+    100% {
+        background-size: auto 110%;
+        background-position: right center;
+    }
+}
+
+/*==================================================================================================
+    main
+==================================================================================================*/
+.top-main {
+    position: relative;
+    background: url(../img/top/main_bg.png) no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    &__ttl {
+        font-size: clamp((36em/12), (8400vw/1920), (84em/16));
+        color: #FFF;
+        position: absolute;
+        z-index: 1;
+        top: 45%;
+        left: 50%;
+        width: percentage(827/1920);
+        max-width: 827px;
+        transform: translate(-50%,-50%);
+        z-index: 10;
+        @include max-screen($screen-md) {
+            left: 1.25em;
+        }
+    }
+    &__txt {
+        font-family: $Bebas-font;
+        color: #FFF;
+        font-size: (92em/16);
+        position: absolute;
+        left: 2.5%;
+        bottom: 6%;
+        line-height: 1;
+        span {
+            display: block;
+            font-size: (20em/92);
+            margin-top: 0.5em;
+        }
+    }
+}
+
+.sec-news {
+    background-image: url(../img/top/news_bg.svg) , url(../img/top/news_bg2.svg) , url(../img/top/news_bg3.svg);
+    background-repeat: no-repeat , no-repeat , no-repeat;
+    background-position: top left , bottom right , bottom (13800vw/1920) center;
+    background-size: percentage(1362/1920) , percentage(1362/1920) , 103% auto;
+    padding: 8em 0 22em;
+    &__inner {
+        max-width: 942px;
+        margin: 0 auto;
+    }
+}
+.news-area {
+    display: flex;
+    padding: 0 20px;
+    &__ttl {
+        &__ttl {
+            font-size: (63em/16);
+            font-family: $Bebas-font;
+            font-weight: normal;
+            line-height: 1.1;
+        }
+    }
+    &__ul {
+        flex: 1;
+        margin-left: 8%;
+        li {
+            padding: 1.5em 1em;
+            border-bottom: 1px solid #CCC;
+            position: relative;
+            &:after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                right: 1em;
+                width: (5.44em/16);
+                height: (10.12em/16);
+                background: url(../img/common/arrorw_r_gy.svg) no-repeat;
+                background-size: 100% auto;
+                background-position: center;
+                transform: translate(0,-50%);
+            }
+        }
+    }
+}
+.news-bnr {
+    margin-top: 4em;
+}
+.news-btn {
+    display: block;
+    background: $nav;
+    color: #FFF;
+    font-weight: bold;
+    text-align: center;
+    line-height: (46/16);
+    max-width: 152px;
+    margin: 2em auto 0;
+}
+
+.sec-cont {
+    display: flex;
+    //flex-wrap: wrap;
+    position: relative;
+    margin-top: (-16300vw/1920);
+    .sec-area  {
+        padding: 0;
+        a {
+            padding: 8em 20px;
+            display: block;
+            width: 100%;
+            color: #FFF;
+        }
+    }
+}
+.sec-area {
+    width: 100%;
+    display: flex;
+    padding: 8em 20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #FFF;
+    text-align: center;
+    position: relative;
+    &:after {
+        content: "";
+        position: absolute;
+        bottom: 1em;
+        right: 1em;
+        width: (48em/16);
+        height: (48em/16);
+        background: url(../img/common/arrorw_r_gy_s.svg) no-repeat;
+        background-size: 100% auto;
+    }
+    &.--about {
+        background-image: url(../img/top/about_bg.png);
+    }
+    &.--service {
+        background-image: url(../img/top/service_bg.png);
+        top: (16300vw/1920);
+    }
+    &__ttl {
+        line-height: 1.2;
+        margin-bottom: 2em;
+        padding-bottom: 2em;
+        position: relative;
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            height: 2px;
+            width: (50em/16);
+            background: #FFF;
+            transform: translate(-50%,0);
+        }
+        span {
+            display: block;
+            &.main {
+                font-size: (63em/16);
+            }
+            &.sub {
+                font-size: (20em/16);
+            }
+            &.en {
+                font-family: $Bebas-font;
+                font-weight: normal;
+            }
+            &.jp {
+            }
+        }
+    }
+    &__txt {
+        line-height: 1.8;
+    }
+}
+
+.sec-contact {
+    background: $nav url(../img/top/contact_bg.png) no-repeat;
+    background-size: contain;
+    background-position: left center;
+    text-align: center;
+    padding: 12% 20px 8em;
+    color: #FFF;
+    &__inner {
+        max-width: 1220px;
+        margin: 0 auto;
+        
+    }
+}
+.contact-area {
+    &__read {
+        font-size: (38em/16);
+        font-weight: bold;
+        line-height: 1.6;
+        margin-bottom: 0.5em;
+        padding-bottom: 0.5em;
+        border-bottom: 1px solid #FFF;
+    }
+    &__tel {
+        font-size: (77em/16);
+        font-family: $Bebas-font;
+        line-height: 1.2;
+    }
+    &__txt {
+        font-size: (20em/16);
+    }
+    &__btn {
+        display: block;
+        background: #FFF;
+        color: $nav;
+        font-size: (20em/16);
+        font-weight: bold;
+        line-height: (71/20);
+        width: (416em/20);
+        margin: 1em auto 0;
+        border-radius: 50em;
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+}
+
+

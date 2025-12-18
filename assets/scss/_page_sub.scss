@@ -22,145 +22,415 @@
 /*==================================================================================================
     
 ==================================================================================================*/
-
-.sec {
-    padding: 4em 20px;
-    @include max-screen($screen-xs) {
-        padding: 3em 20px;
-    }
-    &__ttl {
-        text-align: center;
-        margin-bottom: 2em;
-        &__en {
-            display: block;
-            font-size: (48em/16);
-            font-family: $Poppins-font;
-            font-weight: 500;
-            font-style: italic;
-            position: relative;
-            margin-bottom: 0.5em;
-            padding-bottom: 0.4em;
-            &::before {
-                content: "";
-                position: absolute;
-                bottom: 0;
-                right: calc(50% + (16em/48));
-                width: (16em/48);
-                height: (4em/48);
-                background: #000;
-            }
-            &::after {
-                content: "";
-                position: absolute;
-                bottom: 0;
-                left: calc(50% - (16em/48));
-                width: (48em/48);
-                height: (4em/48);
-                background: $ora;
-            }
-        }
-        &__jp {
-            display: block;
-            font-size: (24em/16);
-            font-weight: bold;
-        }
+.wrap {
+    padding-top: calc((80em/16) + 4em);
+    padding-bottom: 5em;
+    @include max-screen($screen-sm) {
+        padding-top: calc((80em/16) + 2em);
+        padding-bottom: 3em;
     }
 }
 
-.news-list {
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: (20em/16);
-    li {
-        border-bottom: 2px solid $ora;
-        padding: 0 0 0.75em;
-        margin-bottom: 0.75em;
-        time {
-            color: $ora;
-            font-weight: bold;
-            display: block;
-        }
-        a {
-            &:hover {
-                color: $ora;
-            }
-        }
-    }
-}
-
-.column-list {
-    max-width: 1200px;
-    width: 80%;
-    margin: 0 auto;
+.sub-main {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    @include max-screen($screen-xs) {
-        width: 100%;
+    position: relative;
+    @include max-screen($screen-md) {
+        display: block;
     }
-    li {
-        @include min-screen($screen-xs + 1) {
-            width: 31%;
-            &:not(:nth-of-type(3n+1)) {
-                margin-left: 3.5%;
+    &__bg {
+        position: absolute;
+        z-index: -1;
+        width: percentage(1240/1920);
+        top: (50000vw/1920);
+        left: 0;
+    }
+    &__read {
+        flex: 1;
+        padding: percentage(90/1920) 0 0 percentage(197/1920);
+    }
+    &__ttl {
+        .main {
+            display: block;
+            font-size: (9200vw/1920);
+            font-family: $Bebas-font;
+            font-weight: 500;
+            line-height: 1;
+            @include max-screen($screen-md) {
+                font-size: min((10000vw/768), 6rem);
             }
         }
-        margin-bottom: 3%;
-        font-weight: 500;
-        @include max-screen($screen-xs) {
-            width: 100%;
-            margin-bottom: 10%;
+        .sub {
+            display: block;
+            font-size: (2000vw/1920);
+            @include max-screen($screen-md) {
+                font-size: min((4500vw/768), 2.7rem);
+            }
+        }
+    }
+    &__txt {
+        margin-top: 5em;
+        font-size: (1800vw/1920);
+        line-height: 2.2;
+        @include max-screen($screen-md) {
+            font-size: min((2500vw/768), 1.5rem);
+            margin-top: 2em;
         }
     }
     &__img {
-        margin-bottom: 0.5em;
-        img {
-            object-fit: cover !important;
-            width: 100% !important;
-            height: 250px !important;
-            @include max-screen($screen-xl) {
-                height: (15000vw/960) !important;
-            }
-            @include max-screen($screen-xs) {
-                height: (22442vw/375) !important;
-                height: 50vw !important;
-            }
+        width: percentage(1240/1920);
+        @include max-screen($screen-md) {
+            margin-top: 2em;
+            margin-left: auto;
         }
-    }
-    &__time {
-        font-size: (16em/16);
-        color: #CCC;
-    }
-    &__ttl {
-        font-size: (20em/16);
-        line-height: 1.4;
-        font-weight: 500;
-        margin-top: 0.5em;
-        font-weight: bold;
-    }
-    &__txt {
-        font-size: (18em/16);
-        margin-top: 0.5em;
-    }
-    .news-more {
-        text-align: left;
-        margin-top: 1em;
     }
 }
 
+.contact-main {
+    text-align: center;
+    margin-bottom: 3em;
+    &__ttl {
+        margin-bottom: 3em;
+        .main {
+            font-size: (92em/16);
+            font-family: $Bebas-font;
+            font-weight: 500;
+            line-height: 1.1;
+            display: block;
+            @include max-screen($screen-xs) {
+                font-size: (48em/12);
+            }
+        }
+        .sub {
+            display: block;
+            font-size: (20em/16);
+        }
+    }
+    &__txt {
+        font-size: (18em/16);
+        line-height: 2.5;
+    }
+}
+.contact-box {
+    max-width: 1100px;
+    background: #f7f7f7;
+    padding: 4em 20px;
+    margin: 3em auto;
+    &__inner {
+        max-width: 550px;        
+        margin: 0 auto;
+    }
+}
+.contact-dl {
+    margin-bottom: 2em;
+    dt {
+        font-weight: bold;
+        font-size: (18em/16);
+        margin-bottom: 0.5em;
+        span {
+            font-size: 1rem;
+            color: #FFF;
+            border-radius: 0.2em;
+            padding: 0.15em 0.5em;
+            margin-left: 0.5em;
+            display: inline-block;
+            &.need {
+                background: $nav;
+            }
+            &.any {
+                background: #9a9aa7;
+            }
+        }
+    }
+    dd {
+        input,select,textarea {
+            width: 100%;
+            padding: 0 1em;
+            height: (60em/16);
+            border: 1px solid #f0f0f0;
+            background: #FFF;
+        }
+        textarea {
+            height: (204em/16); 
+        }
+        .error {
+            color: $red;
+            margin-top: 0.5em;
+        }
+        + dt {
+            margin-top: 2em;
+        }
+    }
+}
+
+.sec {
+    padding: 8em 20px 4em;
+    @include max-screen($screen-xs) {
+        padding: 4em 20px;
+    }
+    &__ttl {
+        text-align: center;
+        margin-bottom: 2.5em;
+        .main {
+            font-size: (62em/16);
+            font-family: $Bebas-font;
+            font-weight: 500;
+            line-height: 1.1;
+            display: block;
+            &.lg {
+                font-size: (92em/16);
+                @include max-screen($screen-xs) {
+                    font-size: (48em/12);
+                }
+            }
+        }
+        .sub {
+            display: block;
+            font-size: (18em/16);
+        }
+    }
+    &__txt {
+        text-align: center;
+        line-height: (48/18);
+        font-size: (18em/16);
+    }
+}
+
+.about-name {
+    max-width: 370px;
+    margin: 2em auto;
+    @include max-screen($screen-xs) {
+        width: 70%;
+    }
+}
+.gallery-ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    &:after {
+        content: "";
+        width: percentage(564/1760);
+    }
+    li {
+        width: percentage(564/1760);
+        margin-bottom: 2%;
+    }
+}
+.outline-dl {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    border-bottom: 1px solid #000;
+    padding: 2em 1em;
+    font-size: (18em/16);
+    &:nth-of-type(1) {
+        border-top: 1px solid #000;
+    }
+    dt {
+        width: 10em;
+    }
+    dd {
+        flex: 1;
+    }
+}
+
+.sec-news {
+    padding: 0 20px;
+    @include max-screen($screen-sm) {
+    }
+    &__inner {
+        max-width: 1525px;
+        width: 80%;
+        margin: 0 auto;
+        @include max-screen($screen-sm) {
+            width: auto;
+        }
+    }
+}
+.news-area {
+    display: flex;
+    @include max-screen($screen-sm) {
+        padding: 0;
+        display: block;
+    }
+    &__ttl {
+        @include max-screen($screen-sm) {
+            margin-bottom: 1em;
+        }
+        &__ttl {
+            font-size: (92em/16);
+            font-family: $Bebas-font;
+            font-weight: normal;
+            line-height: 1.1;
+            @include max-screen($screen-sm) {
+                font-size: (8000vw/768);
+                text-align: center;
+                br {
+                    display: none;
+                }
+            }
+        }
+        &__sub {
+            font-size: (20em/16);
+            margin-top: 1em;
+            font-weight: bold;
+            @include max-screen($screen-sm) {
+                text-align: center;
+                margin-top: 0;
+            }
+        }
+    }
+    &__ul {
+        flex: 1;
+        margin-left: 8%;
+        border-top: 1px solid #CCC;
+        @include max-screen($screen-sm) {
+            margin-left: 0%;
+        }
+        li {
+            padding: 1.5em 2em 1.5em 1em;
+            border-bottom: 1px solid #CCC;
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            @include max-screen($screen-sm) {
+                padding: 1.5em 1.5em 1.5em 0;
+            }
+            &:after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                right: 1em;
+                width: (5.44em/16);
+                height: (10.12em/16);
+                background: url(../img/common/arrorw_r_gy.svg) no-repeat;
+                background-size: 100% auto;
+                background-position: center;
+                transform: translate(0,-50%);
+            }
+            .time {
+            }
+            .cate {
+                margin: 0 1.5em;
+                font-size: (12em/16);
+                padding: 0.25em 0;
+                width: (84em/12);
+                text-align: center;
+                border-radius: 50em;
+                border: 1px solid #000;
+            }
+            a {
+                @include min-screen($screen-sm + 1) {
+                    flex: 1;
+                }
+                @include max-screen($screen-sm) {
+                    width: 100%;
+                    display: block;
+                    margin-top: 0.5em;
+                }
+            }
+        }
+    }
+}
+.news-btn {
+    display: block;
+    background: $nav;
+    color: #FFF;
+    font-weight: bold;
+    text-align: center;
+    line-height: (46/16);
+    max-width: 152px;
+    margin: 2em auto 0;
+}
+.wp-pagenavi {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+    span,
+    a {
+        display: block;
+        padding: 0;
+        width: 2em;
+        line-height: 2em;
+        font-size: (18em/16);
+        border: 1px solid $nav;
+        margin: 0 0.25em;
+        color: $nav;
+        &.current {
+            background: $nav;
+            color: #FFF;
+        }
+    }
+    a {
+        &:hover {
+            background: $nav;
+            color: #FFF;
+        }
+    }
+}
+
+.sec-single {
+    padding: 0 20px;
+    &__ttl {
+        text-align: center;
+        font-weight: 500;
+        &__sub {
+            font-size: (30em/16);
+            color: #CCC;
+            font-family: $Bebas-font;
+            display: block;
+        }
+        &__main {
+            display: block;
+            font-size: (46em/16);
+            @include max-screen($screen-sm) {
+                font-size: (26em/12);
+            }
+        }
+    }
+    &__info {
+        text-align: center;
+        margin-top: 1em;
+        .time {
+        }
+        .cate {
+            margin: 0 1.5em;
+            font-size: (12em/16);
+            padding: 0.25em 0;
+            width: (84em/12);
+            text-align: center;
+            border-radius: 50em;
+            border: 1px solid #000;
+            display: inline-block;
+        }
+    }
+}
 
 .single-area,
 .page-area {
     max-width: 1000px;
-    margin: 0 auto 5em;
-    &__date {
-        text-align: right;
-        margin-bottom: 3em !important;
+    margin: 5em auto 5em;
+    @include max-screen($screen-sm) {
+        margin: 3em auto;
     }
     > * {
         font-family: "Noto Sans JP", sans-serif;
+        font-size: (18em/16);
+        line-height: 2.2;
         &:not(:last-child) {
-            margin-bottom: 1em;
+            margin-top: 3em;
+            margin-bottom: 3em;
+            @include max-screen($screen-sm) {
+                margin-top: 2em;
+                margin-bottom: 2em;
+            }
+        }
+    }
+    .wp-block-columns {
+        > * {
+            width: 48%;
         }
     }
     a {
@@ -191,20 +461,19 @@
         }
     }
     h2 {
-        font-size: (24em/16);
-        background: #f2f2f2;
-        border-left: (6em/24) solid $ora;
-        padding: 0.75em 0.5em;
+        font-size: (26em/16);
+        border-bottom: 1px solid #000;
+        padding: 0 0 0.75em;
     }
     h3 {
         font-size: (20em/16);
-        background: $ora;
+        background: $nav;
         color: #FFF;
         padding: 0.5em 0.75em;
     }
     h4 {
         font-size: (20em/16);
-        border-bottom: 2px solid $ora;
+        border-bottom: 2px solid $nav;
         padding: 0.5em 0;
     }
     h5 {
@@ -230,3 +499,91 @@
         }
     }
 }
+
+.service-cont {
+    display: flex;
+    align-items: center;
+    padding: 0 percentage(80/1920);
+    margin-top: 8em;
+    @include max-screen($screen-sm) {
+        flex-direction: column;
+        margin-top: 5em;
+    }
+    &__img {
+        width: percentage(580/1760);
+        @include max-screen($screen-sm) {
+            width: 100%;
+            margin-bottom: 2em;
+        }
+    }
+    .sec-service {
+        width: percentage(800/1760);
+        margin: 0 auto;
+        position: relative;
+        padding-left: 3em;
+        @include max-screen($screen-sm) {
+            width: 100%;
+            padding-left: 2.5em;
+        }
+        &__ttl {
+            font-size: (42em/16);
+            line-height: 1.6;
+            margin-bottom: 0.75em;
+            @include max-screen($screen-sm) {
+                font-size: (22em/12);
+            }
+        }
+        &__num {
+            position: absolute;
+            top: 0.5em;
+            left: 0;
+            line-height: 1;
+            writing-mode: vertical-rl;
+            font-family: $Bebas-font;
+            color: #ababab;
+            font-size: (21em/16);
+            @include max-screen($screen-sm) {
+                top: 0;
+            }
+        }
+        &__txt {
+            font-size: (18em/16);
+            line-height: (58em/16);
+            @include max-screen($screen-sm) {
+                line-height: (38em/16);
+            }
+        }
+        &__table {
+            text-align: left;
+            font-size: (18em/16);
+            th,td {
+                padding: 0.5em 0;
+                vertical-align: top;
+            }
+            th {
+                &:first-child {
+                    width: 12em;
+                    @include max-screen($screen-sm) {
+                        width: 8em;
+                    }
+                }
+            }
+            td {
+                &:first-child {
+                    padding-right: 1em;
+                }
+            }
+        }
+    }
+    @include min-screen($screen-sm + 1) {
+        &:nth-of-type(odd) {
+            .service-cont__img {
+                order: 2;
+            }
+            .sec-service {
+                order: 1;
+            }
+        }
+    }
+}
+

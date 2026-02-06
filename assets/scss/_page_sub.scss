@@ -44,6 +44,12 @@
         width: percentage(1240/1920);
         top: (50000vw/1920);
         left: 0;
+        img {
+            opacity: 0.1;
+            object-fit: cover;
+            width: 100%;
+            height: (102292vw/1920);
+        }
     }
     &__read {
         flex: 1;
@@ -82,6 +88,11 @@
         @include max-screen($screen-md) {
             margin-top: 2em;
             margin-left: auto;
+        }
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: (102292vw/1920);
         }
     }
 }
@@ -517,7 +528,7 @@
         }
     }
     .sec-service {
-        width: percentage(800/1760);
+        width: percentage(1000/1760);
         margin: 0 auto;
         position: relative;
         padding-left: 3em;
@@ -555,16 +566,19 @@
         }
         &__table {
             text-align: left;
-            font-size: (18em/16);
+            font-size: (21em/16);
+            @include max-screen($screen-sm) {
+                font-size: (18em/16);
+            }
             th,td {
                 padding: 0.5em 0;
                 vertical-align: top;
             }
             th {
                 &:first-child {
-                    width: 12em;
+                    width: 16em;
                     @include max-screen($screen-sm) {
-                        width: 8em;
+                        width: 10em;
                     }
                 }
             }

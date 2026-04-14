@@ -15,7 +15,7 @@
 <footer class="site-footer anim fadein">
     <div class="site-footer__inner">
         <div class="site-footer__info">
-            <h3 class="site-footer__logo"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/logo_bk.svg" alt=""></h3>
+            <h3 class="site-footer__logo"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/logo_red.svg" alt=""></h3>
             <p class="site-footer__txt">
                 〒410-0822 静岡県沼津市下香貫前原1491-1<br>
                 TEL.055-918-7679／FAX.055-919-8312
